@@ -1,8 +1,9 @@
 console.log("Welcome to Genie!");
 
+// Changes theme
 const themeBtn = document.getElementById("theme");
 const body = document.getElementById("body");
-var themeCounter = 0;
+var themeCounter = 1;
 
 themeBtn.addEventListener("click", () => {
     if(themeCounter) {
@@ -15,6 +16,31 @@ themeBtn.addEventListener("click", () => {
         themeCounter = 1 - themeCounter;
     }
 });
+
+// Siri wave configuration
+var siriWave = new SiriWave({
+    container: document.getElementById("siri-container"),
+    width: 800,
+    height: 200,
+    style: "ios9",
+    amplitude: "1",
+    speed: "0.30",
+    autostart: true
+});
+
+// Handles mic button click
+const startPage = document.getElementById("start-page");
+const voicePage = document.getElementById("voice-page");
+const micBtn = document.getElementById("mic-btn");
+
+micBtn.addEventListener('click', () => {
+    eel.playAssistantSound();
+    startPage.hidden = true;
+    voicePage.hidden = false;
+    eel.speak("Hello! I'm Genie.")
+    eel.takeCommand();
+});
+
 
 // $(document).ready(function () {
 

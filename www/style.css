@@ -3,6 +3,11 @@
     padding: 0;
 }
 
+#body {
+    background-color: black;
+    color: white;
+}
+
 .container {
     margin: 200px auto;
     width: 60%;
@@ -13,9 +18,12 @@ header {
 }
 
 .theme-set {
-    background-color: skyblue;
-    width: 25px;
-    height: 25px;
+    background-color: gold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 35px;
+    height: 35px;
     border-radius: 20px;
     :hover {
         cursor: pointer;
@@ -26,14 +34,14 @@ header {
     font-size: 50px;
     font-family: Georgia, 'Times New Roman', Times, serif;
     text-align: center;
-    color: skyblue;
+    color: gold;
 }
 
 .query-box-container {
     margin: 40px auto;
     width: 50%;
     display: flex;
-    gap: 2vw;
+    gap: 1vw;
 }
 
 #query-box {
@@ -41,23 +49,41 @@ header {
     height: 30px;
     padding: 1vh 2vw;
     font-size: larger;
-    border: 1px solid gray;
+    border: 2px solid gold;
     border-radius: 25px;
 }
 
-.mic {
+.query-box-item {
     
     :hover {
         cursor: pointer;
     }
 }
-.mic img, .lens img {
+.query-box-item img {
     width: 35px;
 }
 
-.lens {
+.chat-display {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
 
-    :hover {
-        cursor: pointer;
+@media only screen and (max-width: 1000px) {
+    .container {
+        width: 100%;
+    }
+
+    .heading {
+        font-size: 40px;
+    }
+
+    #query-box {
+        width: 80vw;
+        height: 15px;
+        padding: 1vh 2vw;
+        font-size: medium;
+    }
+
+    .query-box-item img {
+        width: 30px;
     }
 }

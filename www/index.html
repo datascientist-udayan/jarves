@@ -15,24 +15,45 @@
         </div>
     </header>
     <div class="container">
-        <div class="heading">
-            <h1>Genie</h1>
-        </div>
-        <div class="query-box-container">
-            <input type="text" name="query-box" id="query-box" placeholder="type here ...">
-            <div class="mic">
-                <img src="./assets/img/mic.svg" alt="Start Mic">
+        <section id="start-page">
+            <div class="heading">
+                <h1>Genie</h1>
             </div>
-            <div class="lens">
-                <img src="./assets/img/lens.svg" alt="Start Camera" >
+            <div class="query-box-container">
+                <input type="text" name="query-box" id="query-box" placeholder="type here ...">
+                <div class="query-box-item" id="send-btn">
+                    <img src="./assets/img/send.svg" alt="Send">
+                </div>
+                <div class="query-box-item" id="mic-btn">
+                    <img src="./assets/img/mic.svg" alt="Start Mic">
+                </div>
+                <div class="query-box-item" id="lens-btn">
+                    <img src="./assets/img/lens.svg" alt="Start Camera">
+                </div>
+                <div class="query-box-item" id="settings-btn">
+                    <img src="./assets/img/tune.svg" alt="Customize">
+                </div> 
             </div>
-        </div>
-        <div class="tools-container">
+            <div class="tools-container">
 
-        </div>
+            </div>
+        </section>
+        <section id="voice-page" hidden>
+            <div class="chat-display">
+                <h1 id="chat-text">Hello! I'm Genie</h1>
+            </div>
+            <div id="siri-container"></div>
+        </section>
     </div>
 
+    <!-- Importing eel  -->
+    <script type="text/javascript" src="/eel.js"></script>
+
+    <!-- Siri wave CDN -->
+    <script src="https://unpkg.com/siriwave/dist/siriwave.umd.min.js"></script>
+
     <script src="main.js"></script>
+    <script src="controller.js"></script>
 </body>
 
 </html>

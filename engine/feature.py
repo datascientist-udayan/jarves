@@ -1,5 +1,7 @@
 from playsound import playsound
+import eel
 
-def playAssistentSound():
-    music_dirt = "start_sound.mp3"
+@eel.expose
+def playAssistantSound():
+    music_dirt = "www//assets//audio//start_sound.mp3"
     playsound(music_dirt)

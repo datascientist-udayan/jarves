@@ -1,6 +1,9 @@
 import pyttsx3
 import speech_recognition as sr
+import time
+import eel
 
+@eel.expose
 def speak(text):
     engine = pyttsx3.init()
     voices = engine.getProperty('voices')
@@ -9,11 +12,12 @@ def speak(text):
     engine.say(text)
     engine.runAndWait()
 
-def takecommand():
+@eel.expose
+def takeCommand():
     r = sr.Recognizer()
     with sr.Microphone() as source:
-        print('Listening...')
-        # eel.DisplayMessage('listening....')
+        print('Listening ...')
+        eel.DisplayMessage('Listening ...')
         r.pause_threshold = 1
         r.adjust_for_ambient_noise(source)
         
@@ -21,11 +25,12 @@ def takecommand():
 
     try:
         print('Recognizing...')
-        # eel.DisplayMessage('recognizing....')
+        eel.DisplayMessage('Recognizing ...')
         query = r.recognize_google(audio, language='en-in')
         print(f"User said: {query}")
-        # eel.DisplayMessage(query)
-        # time.sleep(2)
+        eel.DisplayMessage(query)
+        time.sleep(2)
+        eel.ShowHood()
     except sr.UnknownValueError:
         print("Google Speech Recognition could not understand audio")
         return ""
@@ -37,10 +42,3 @@ def takecommand():
         return ""
     
     return query.lower()
-
-if __name__ == "__main__":
-    text = takecommand()
-    if text:
-        speak(text)
-    else:
-        speak("I didn't understand what you said. Please try again.")
