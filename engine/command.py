@@ -29,7 +29,8 @@ def takeCommand():
         query = r.recognize_google(audio, language='en-in')
         print(f"User said: {query}")
         eel.DisplayMessage(query)
-        time.sleep(2)
+        speak(query)
+        time.sleep(5)
         eel.ShowHood()
     except sr.UnknownValueError:
         print("Google Speech Recognition could not understand audio")

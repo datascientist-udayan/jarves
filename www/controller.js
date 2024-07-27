@@ -5,7 +5,6 @@ const displayBox = document.getElementById("chat-text");
 eel.expose(DisplayMessage);
 function DisplayMessage(text) {
     displayBox.innerText = text;
-    eel.speak(text);
 }
 
 // Display start page
