@@ -43,3 +43,4 @@ def takeCommand():
         return ""
     
     return query.lower()
+
