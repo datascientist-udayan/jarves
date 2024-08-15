@@ -12,7 +12,7 @@ def speak(text):
     engine.say(text)
     engine.runAndWait()
 
-@eel.expose
+# @eel.expose
 def takeCommand():
     r = sr.Recognizer()
     with sr.Microphone() as source:
@@ -30,8 +30,8 @@ def takeCommand():
         print(f"User said: {query}")
         eel.DisplayMessage(query)
         speak(query)
-        time.sleep(5)
-        eel.ShowHood()
+        # time.sleep(5)
+        # eel.ShowHood()
     except sr.UnknownValueError:
         print("Google Speech Recognition could not understand audio")
         return ""
@@ -44,3 +44,22 @@ def takeCommand():
     
     return query.lower()
 
+@eel.expose
+def chat():
+    Talk = True
+    while Talk == True:
+        userSaid = takeCommand()
+        if "hello" in userSaid:
+            speak("hello")
+        if "bye" in userSaid:
+            speak("goodbye")
+        if "how are you" in userSaid:
+            speak("Doing well")
+        if "stop" in userSaid:
+            speak("Stopping sir")
+            break
+        if "exit" in userSaid:
+            speak("ending program")
+            break
+    eel.ShowHood()
+    time.sleep(2)
