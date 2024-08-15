@@ -38,7 +38,7 @@ micBtn.addEventListener('click', () => {
     startPage.hidden = true;
     voicePage.hidden = false;
     eel.speak("Hello! I'm Genie.")
-    eel.takeCommand();
+    eel.chat();
 });
 
 
