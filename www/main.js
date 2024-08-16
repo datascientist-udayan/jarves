@@ -41,6 +41,17 @@ micBtn.addEventListener('click', () => {
     eel.chat();
 });
 
+// Handles keyboard interrupt
+document.addEventListener('keyup', (e) => {
+    if(e.key === 'j' && e.metaKey) {
+        eel.playAssistantSound();
+        startPage.hidden = true;
+        voicePage.hidden = false;
+        eel.speak("Hello! I'm Genie.")
+        eel.chat();
+    }
+});
+
 
 // $(document).ready(function () {
 
