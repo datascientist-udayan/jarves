@@ -9,8 +9,12 @@
 }
 
 .container {
-    margin: 200px auto;
+    margin: 50px auto;
     width: 60%;
+}
+
+#img-container {
+    margin-left: 20vw;
 }
 
 header {

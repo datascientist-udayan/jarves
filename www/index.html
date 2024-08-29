@@ -16,6 +16,13 @@
     </header>
     <div class="container">
         <section id="start-page">
+            <div id="img-container" hidden>
+                <video id="video" width="300" height="200" autoplay muted></video>
+                <!-- <div>
+                    <h1>Output Video</h1>
+                <canvas id="canvasOutput" width="300" height="100"></canvas>
+                </div> -->
+            </div>
             <div class="heading">
                 <h1>Genie</h1>
             </div>
@@ -51,6 +58,10 @@
 
     <!-- Siri wave CDN -->
     <script src="https://unpkg.com/siriwave/dist/siriwave.umd.min.js"></script>
+
+    <!-- Opencv for image detection -->
+    <script defer src="opencv.js"></script>
+    <script defer src="script.js"></script>
 
     <script src="main.js"></script>
     <script src="controller.js"></script>
